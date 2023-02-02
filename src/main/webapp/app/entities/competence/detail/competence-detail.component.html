@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="competence">
+      <h2 data-cy="competenceDetailsHeading"><span>Competence</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ competence.id }}</span>
+        </dd>
+        <dt><span>Name</span></dt>
+        <dd>
+          <span>{{ competence.name }}</span>
+        </dd>
+        <dt><span>Level</span></dt>
+        <dd>
+          <span>{{ competence.level }}</span>
+        </dd>
+        <dt><span>Category</span></dt>
+        <dd>
+          <div *ngIf="competence.category">
+            <a [routerLink]="['/category', competence.category?.id, 'view']">{{ competence.category?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Employee</span></dt>
+        <dd>
+          <div *ngIf="competence.employee">
+            <a [routerLink]="['/employee', competence.employee?.id, 'view']">{{ competence.employee?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/competence', competence.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20230201233345",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "category",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Category",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "competence",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "competence",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

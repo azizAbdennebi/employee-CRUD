@@ -1,0 +1,22 @@
+entity Employee {
+  name String,
+  firstName String,
+  address String,
+}
+
+entity Category {
+  name String,
+}
+
+entity Competence {
+  name String,
+  level Integer,
+}
+
+relationship OneToMany {
+  Employee to Competence,
+}
+
+relationship ManyToOne {
+  Competence to Category,
+}
